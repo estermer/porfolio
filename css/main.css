@@ -110,7 +110,7 @@ h2, h3, h4, h5, h6 {
 .line-1 {
     position: relative;
     color: white;
-    top: 50%;
+    top: 50%;  /*message*/
     margin: 0 auto;
     border-right: 2px solid rgba(255,255,255,.75);
     text-align: center;
