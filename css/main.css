@@ -8,14 +8,11 @@ html, body {
   font-family: 'Inconsolata', monospace;
 }
 
-h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 { 
   font-family: 'Noto Sans', sans-serif;
 }
 
 #menu {
-  /*display: flex;
-  flex-direction: row;
-  justify-content: space-between;*/
   position: fixed;
   top: 0;
   left: 0;
@@ -39,7 +36,16 @@ h2, h3, h4, h5, h6 {
   border-color: transparent;
 }
 
-#hamburger:hover, .fa:hover {
+#resume {
+  font-size: 16px;
+  font-weight: bolder;
+  border-radius: 10px;
+  color: #37708d;
+  background-color: white;
+  border-color: transparent;
+}
+
+#hamburger:hover, .fa:hover, #resume:hover {
   cursor: pointer;
   color: rgba(55, 112, 141, .8);
   background-color: rgba(255, 255, 255, .8);
@@ -90,12 +96,44 @@ h2, h3, h4, h5, h6 {
 
 #home > h3 {
   width: 17em;
-  font-size: 50px; 
+  font-size: 40px; 
 }
 
 
 #about {
+  clear: both;
+  padding: 50px;
+}
 
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  margin-top: 100px;
+}
+
+#container div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 20px;
+  width: 400px;
+}
+
+#container div p, #container li {
+  width: 350px;
+}
+
+#about h2, #about h3 {
+  color: rgba(55, 112, 141, .8);
+}
+
+#me {
+  display: inline-block;
+  margin: 50px;
+  border-radius: 100%;
+  max-width: 350px;
 }
 
 #projects {
@@ -129,7 +167,7 @@ h2, h3, h4, h5, h6 {
 
 /* Animation */
 .anim-typewriter{
-  animation: typewriter 2s steps(34) 1s 1 normal both,
+  animation: typewriter 4s steps(34) 1s 1 normal both,
              blinkTextCursor 500ms steps(44) infinite normal;
 }
 
@@ -141,4 +179,23 @@ h2, h3, h4, h5, h6 {
 @keyframes blinkTextCursor{
   from{border-right-color: rgba(255,255,255,.75);}
   to{border-right-color: transparent;}
+}
+
+
+@media screen and (max-width: 950px) {
+  #container {
+    flex-direction: column;
+  }
+  #about {
+    height: 200vh;
+  }
+  #me {
+    width: 280px;
+  }
+  #home > h1 {
+    font-size: 50px;
+  }
+  #home > h3 {
+    font-size: 20px;
+  }
 }
