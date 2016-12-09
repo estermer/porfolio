@@ -75,7 +75,7 @@ $(function(){
     $('#thumbs').html('');
 
     for(var i = 0; i < list.length; i ++){
-      var $thumb = $('div');
+      var $thumb = $('<div>');
       $thumb.addClass('project-thumb');
       $thumb.html(`
         <h3>${list[i].title}</h3>
@@ -88,6 +88,7 @@ $(function(){
           <a class="fa fa-github" href="${list[i].githubUrl}"></a>
         </h4>
       `);
+      console.log($thumb);
       $('#thumbs').append($thumb);
     }
 
