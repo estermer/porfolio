@@ -133,11 +133,11 @@ h2, h3, h4, h5, h6 {
   display: inline-block;
   margin: 50px;
   border-radius: 100%;
-  max-width: 350px;
+  max-height: 400px;
 }
 
 #projects {
-  height: 140%;
+  height: 100%;
   color: white;
   padding-top: 30px;
   /* The image used */

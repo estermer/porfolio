@@ -2,6 +2,8 @@
 
 $(function(){
 
+  var $projectOriginalHeight = $('#projects').height();
+
   ///NAV BUTTON CLICK FOR DROPDOWN MENU///
   $('#hamburger').on('click', function(){
     $('#dropdown-content').slideToggle();
@@ -52,26 +54,26 @@ $(function(){
   });
 
   $('#rails').on('click', function(){
-    showProjects(railsProjects);
+    showProjects(railsProjects, $projectOriginalHeight);
   });
 
   $('#mean').on('click', function(){
-    showProjects(meanProjects);
+    showProjects(meanProjects, $projectOriginalHeight);
   });
 
   $('#js').on('click', function(){
-    showProjects(jsProjects);
+    showProjects(jsProjects, $projectOriginalHeight);
   });
 
   $('#collab').on('click', function(){
-    showProjects(contributions);
+    showProjects(contributions, $projectOriginalHeight);
   });
 
   $('#school').on('click', function(){
-    showProjects(challenges);
+    showProjects(challenges, $projectOriginalHeight);
   });
 
-  function showProjects(list) {
+  function showProjects(list, height) {
     $('#thumbs').html('');
 
     for(var i = 0; i < list.length; i ++){
@@ -84,16 +86,29 @@ $(function(){
           ${list[i].description}
         </p>
         <h4>
-          <a class="fa fa-play-circle" href="${list[i].appUrl}"></a>
-          <a class="fa fa-github" href="${list[i].githubUrl}"></a>
+          <a class="fa fa-play-circle" href="${list[i].appUrl}" target="_blank"></a>
+          <a class="fa fa-github" href="${list[i].githubUrl}" target="_blank"></a>
         </h4>
       `);
       console.log($thumb);
       $('#thumbs').append($thumb);
     }
 
-    var setOfThree = list.length%3;
+    $('#thumbs').hide();
+    $('#thumbs').fadeIn('slow');
 
+    var width = $(window).width();
+    var setsOfThree = list.length / 3;
+    console.log(setsOfThree);
+    if(width > 950 && setsOfThree != 1) {
+      setsOfThree = (setsOfThree - 1) * 310;
+      console.log(height);
+      console.log(setsOfThree);
+      $('#projects').height(height + setsOfThree);
+      console.log($('#projects').height());
+    } else if(width < 950 && list.length != 1) {
+      $('#projects').height(height + ((list.length - 1) * 310));
+    }
   };
 
 
