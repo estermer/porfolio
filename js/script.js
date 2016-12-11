@@ -108,6 +108,8 @@ $(function(){
       console.log($('#projects').height());
     } else if(width < 950 && list.length != 1) {
       $('#projects').height(height + ((list.length - 1) * 310));
+    } else {
+      $('#projects').height(height);
     }
   };
 
