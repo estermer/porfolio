@@ -10,48 +10,48 @@ $(function(){
   });
 
   ///NAV SCROLL FADE IN ABOUT WHEN REACH ABOUT///
-  $(window).on('scroll', function(){
-    var top = $(window).scrollTop();
-    var width = $(window).width();
-
-    //FADE IN/OUT ABOUT ME
-    if(width > 950) {
-      if(top > 440 && top < 1170){
-        $('#container').fadeIn('slow');
-      } else {
-        $('#container').fadeOut('slow');
-      }
-    } else {
-      if(top > 440 && top < 1950){
-        $('#container').fadeIn('slow');
-      } else {
-        $('#container').fadeOut('slow');
-      }
-    }
-
-    //FADE PROJECTS IN/OUT
-    if(width > 950) {
-      if(top > 1170){
-        $('#btns').fadeIn('slow');
-        $('#thumbs').fadeIn('slow');
-        $('#projects-title').fadeIn('slow');
-      } else {
-        $('#btns').fadeOut('slow');
-        $('#thumbs').fadeOut('slow');
-        $('#projects-title').fadeOut('slow');
-      }
-    } else {
-      if(top > 2050){
-        $('#btns').fadeIn('slow');
-        $('#thumbs').fadeIn('slow');
-        $('#projects-title').fadeIn('slow');
-      } else {
-        $('#btns').fadeOut('slow');
-        $('#thumbs').fadeOut('slow');
-        $('#projects-title').fadeOut('slow');
-      }
-    }
-  });
+  // $(window).on('scroll', function(){
+  //   var top = $(window).scrollTop();
+  //   var width = $(window).width();
+  //
+  //   //FADE IN/OUT ABOUT ME
+  //   if(width > 991) {
+  //     if(top > 440 && top < 1200){
+  //       $('.about').fadeIn('slow');
+  //     } else {
+  //       $('.about').fadeOut('slow');
+  //     }
+  //   } else if (width < 992 && width > 575) {
+  //     if(top > 440 && top < 1750){
+  //       $('.about').fadeIn('slow');
+  //     } else {
+  //       $('.about').fadeOut('slow');
+  //     }
+  //   }
+  //
+  //   //FADE PROJECTS IN/OUT
+  //   if(width > 991) {
+  //     if(top > 1200){
+  //       $('#btns').fadeIn('slow');
+  //       $('#thumbs').fadeIn('slow');
+  //       $('#projects-title').fadeIn('slow');
+  //     } else {
+  //       $('#btns').fadeOut('slow');
+  //       $('#thumbs').fadeOut('slow');
+  //       $('#projects-title').fadeOut('slow');
+  //     }
+  //   } else if (width < 992 && width > 575) {
+  //     if(top > 1800){
+  //       $('#btns').fadeIn('slow');
+  //       $('#thumbs').fadeIn('slow');
+  //       $('#projects-title').fadeIn('slow');
+  //     } else {
+  //       $('#btns').fadeOut('slow');
+  //       $('#thumbs').fadeOut('slow');
+  //       $('#projects-title').fadeOut('slow');
+  //     }
+  //   } else {}
+  // });
 
   $('#rails').on('click', function(){
     showProjects(railsProjects, $projectOriginalHeight);
@@ -78,17 +78,21 @@ $(function(){
 
     for(var i = 0; i < list.length; i ++){
       var $thumb = $('<div>');
-      $thumb.addClass('project-thumb');
+      // $thumb.addClass('col-xs-6');
+      $thumb.addClass('col-md-6');
+      $thumb.addClass('col-lg-4');
       $thumb.html(`
-        <h3>${list[i].title}</h3>
-        <img src="${list[i].img}" alt="${list[i].title}" />
-        <p>
-          ${list[i].description}
-        </p>
-        <h4>
-          <a class="fa fa-play-circle" href="${list[i].appUrl}" target="_blank"></a>
-          <a class="fa fa-github" href="${list[i].githubUrl}" target="_blank"></a>
-        </h4>
+        <div class="project-thumb">
+          <h3>${list[i].title}</h3>
+          <img src="${list[i].img}" alt="${list[i].title}" />
+          <p>
+            ${list[i].description}
+          </p>
+          <h4>
+            <a class="fa fa-play-circle" href="${list[i].appUrl}" target="_blank"></a>
+            <a class="fa fa-github" href="${list[i].githubUrl}" target="_blank"></a>
+          </h4>
+        </div>
       `);
       console.log($thumb);
       $('#thumbs').append($thumb);

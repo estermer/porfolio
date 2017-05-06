@@ -12,8 +12,9 @@ h2, h3, h4, h5, h6 {
   font-family: 'Noto Sans', sans-serif;
 }
 
-#menu {
+nav {
   position: fixed;
+  z-index: 999;
   top: 0;
   left: 0;
   color: white;
@@ -80,6 +81,7 @@ h2, h3, h4, h5, h6 {
 }
 
 #home {
+  height: 100%;
   /* The image used */
   background-image: url("../img/code-wallpaper-3.jpg");
 
@@ -103,26 +105,7 @@ h2, h3, h4, h5, h6 {
 #about {
   clear: both;
   padding: 50px;
-}
-
-#container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 100px;
-}
-
-#container div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0 auto;
-  padding: 20px;
-  width: 400px;
-}
-
-#container div p, #container li {
-  width: 350px;
+  /*overflow: auto;*/
 }
 
 #about h2, #about h3 {
@@ -150,14 +133,6 @@ h2, h3, h4, h5, h6 {
   background-size: cover;
 }
 
-#btns {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
-
 .projects-button {
   display: inline-block;
   text-align: center;
@@ -167,7 +142,10 @@ h2, h3, h4, h5, h6 {
   border-radius: 50%;
   min-width: 150px;
   height: 150px;
+}
 
+.projects-button:hover {
+  cursor: pointer;
 }
 
 .projects-button > img {
@@ -176,19 +154,17 @@ h2, h3, h4, h5, h6 {
 }
 
 #thumbs {
-  width: 75%;
-  margin: 0 auto;
   padding-top: 20px;
 }
 
 .project-thumb {
   position: relative;
-  float: left;
   text-align: center;
-  margin: 10px 50px 10px 50px;
+  margin: 10px 30px 10px 30px;
+  padding: 5px;
   background-color: rgba(0, 0, 0, .8);
   height: 300px;
-  width: 280px;
+
 }
 
 .project-thumb > img {
@@ -206,21 +182,15 @@ h2, h3, h4, h5, h6 {
 .project-thumb > h4 {
   position: absolute;
   bottom: 0;
-  right: 100px;
-}
-
-.parallax {
-    /* Set a specific height */
-    height: 100%;
+  left: 33%;
 }
 
 .line-1 {
     position: relative;
     color: white;
-    top: 50%;  /*message*/
+    top: 45%;  /*message*/
     margin: 0 auto;
     border-right: 2px solid rgba(255,255,255,.75);
-    text-align: center;
     white-space: nowrap;
     overflow: hidden;
     transform: translateY(-50%);
@@ -244,37 +214,41 @@ h2, h3, h4, h5, h6 {
 }
 
 
-@media screen and (max-width: 950px) {
-  #container {
-    flex-direction: column;
-  }
+@media (min-width: 576px){
   #about {
-    height: 220vh;
+    height: 150%;
   }
-  #me {
-    width: 280px;
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+  #about {
+    height: 100%;
   }
-  #home > h1 {
-    font-size: 50px;
+}
+
+@media (min-width: 1200px) {}
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 768px) {
+  .project-thumb > h4 {
+    left: 40%;
   }
-  #home > h3 {
-    font-size: 20px;
+}
+
+@media (max-device-width: 768px) {
+  #about {
+    height: 100vh;
+    font-size: 1.3em;
   }
-  #btns {
-    width: 75%;
-    margin: 0 auto;
-  }
-  .projects-button {
-    margin: 10px;
-    border-radius: 100%;
-    min-width: 80px;
-    height: 80px;
-  }
-  .projects-button > img {
-    margin-top: 15px;
-    height: 50px;
-  }
-  #thumbs {
-    width: 50%;
+}
+
+@media (max-device-width: 575px) {
+  #about {
+    height: 100vh;
+    font-size: 1.75em;
   }
 }

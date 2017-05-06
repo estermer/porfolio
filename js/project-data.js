@@ -140,6 +140,14 @@ var challenges = [
 
 var contributions = [
   {
+    title: "Blockstack",
+    img: "./img/blockstack.jpg",
+    appUrl: "https://www.blockstack.org/",
+    githubUrl: "https://github.com/estermer/blockstack.org",
+    description: "Open Source Contributor to decentralize the internet using the blockchain",
+    tech: "React",
+  },
+  {
     title: "If Me",
     img: "./img/ifme.jpg",
     appUrl: "https://www.if-me.org/",
