@@ -5,7 +5,7 @@
   <title>AJAX Office Status Widget</title>
   <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../css/widget.css">
-  <script src="../js/widget.js"></script>
+  <script src="../js/minified/widget.min.js"></script>
 </head>
 <body>
   <div class="grid-container centered">
@@ -31,15 +31,15 @@
 				    statusHTML.classList.add('bulleted');
 				    employeeListDiv.appendChild(statusHTML);
 				    console.log(employeeListDiv);
-				    
+
 				    for (var i = 0; i &lt; employees.length; i++){
-				      
+
 				      //create &lt;li&gt; element for the first employee
 				      var employee = document.createElement('li');
 				      var employeeName = document.createTextNode(employees[i]["name"]);
 				      employee.appendChild(employeeName);
-				      
-				      
+
+
 				      if(employees[i]["inoffice"]){
 				      //add &lt;li class="in"&gt;
 				        employee.classList.add('in');
@@ -47,11 +47,11 @@
 				      //add &lt;li class="out"&gt;
 				        employee.classList.add('out');
 				      }
-				      
+
 				      //append &lt;li&gt; element to &lt;ul&gt;
 				      statusHTML.appendChild(employee);
 				    }
-				    
+
 				  }
 				};
 
@@ -72,42 +72,42 @@
 
 			  $('#employeeList').html('&lt;ul class="bulleted"&gt;&lt;/ul&gt;');
 			  var employees = "";
-			  
+
 			  for(var i = 0; i &lt; json.length; i++){
 			    var name = json[i]["name"];
 			    var inoffice = json[i]["inoffice"];
 			    var status = '';
-			    
+
 			    if(inoffice){
 			      status = 'in';
 			    } else{
 			      status = 'out';
 			    }
-			    
+
 			    var employee = '&lt;li class="' + status + '"&gt;' + name + '&lt;/li&gt;';
 			    employees += employee;
-			    
+
 			  }
 			  $('.bulleted').html(employees);
-			  
+
 			});
 			</code></pre>
-          
+
         </section>
-        
-        
-        
+
+
+
         <aside class="grid-30 list">
           <h2>Employee Office Status</h2>
           <div id="employeeList">
 
-            
+
           </div>
         </aside>
-        
-        
-        
-        
+
+
+
+
         <footer class="grid-100">
           <p>Copyright, The Intranet Corporation</p>
         </footer>
