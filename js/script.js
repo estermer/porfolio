@@ -48,7 +48,6 @@ $(function(){
             '<a class="fa fa-github" href="' + list[i].githubUrl + '" target="_blank"></a>' +
           '</h4>' +
         '</div>');
-      console.log($thumb);
       $('#thumbs').append($thumb);
     }
 
@@ -57,13 +56,9 @@ $(function(){
 
     var width = $(window).width();
     var setsOfThree = list.length / 3;
-    console.log(setsOfThree);
     if(width > 950 && setsOfThree != 1) {
       setsOfThree = (setsOfThree - 1) * 310;
-      console.log(height);
-      console.log(setsOfThree);
       $('#projects').height(height + setsOfThree);
-      console.log($('#projects').height());
     } else if(width < 950 && list.length != 1) {
       $('#projects').height(height + ((list.length - 1) * 310));
     } else {
